@@ -25,30 +25,27 @@ while the background image is loading */
   align-items: center;
 }
 p {
-  font-size: 16px;
+  font-size: 18px;
   word-break: break-all;
 }
 /* --------------------------------------------------------- */
 .transparent-elemenet {
   background-color: black;
-  opacity: 0.9;
+  opacity: 0.8;
   height: 50%;
   border-style: solid;
   border-color: #ff9801;
-  /* box-shadow: 10px 10px #ff9801; */
+  /* border-color: red; */
 }
 .transparent-rectangle {
   display: flex;
-  /* background-color: #dcdce3; */
   flex-direction: column;
   width: 30%;
   max-width: 800px;
-  /* border-radius: 20px; */
 }
 .transparent-rectangle__top {
   margin: 10px 10px;
   background-color: black;
-  /* background-color: #dcdce3; */
   opacity: 0.9;
   display: flex;
   flex-direction: row;
@@ -68,6 +65,7 @@ p {
   height: 150px;
   border-style: solid;
   border-color: #ff9801;
+  /* border-color: red; */
 }
 .transparent-rectangle__top-right {
   align-self: center;
@@ -122,8 +120,8 @@ p {
 
 .transparent-search form button {
   border-radius: 15px;
-  background-color: #ff9801;
-  /* background-color: #243b55; */
+  border-color: #ff9801;
+  background-color: black;
   padding: 10px 20px;
   color: #fff;
   font-size: 16px;
@@ -131,9 +129,9 @@ p {
 }
 
 .transparent-search button:hover {
-  background: #243b55;
+  background: #ff9801;
   color: #fff;
-  box-shadow: 0 0 5px #243b55, 0 0 25px #243b55, 0 0 50px #243b55,
-    0 0 100px #243b55;
+  box-shadow: 0 0 5px  #ff9801, 0 0 25px  #ff9801, 0 0 50px  #ff9801,
+    0 0 100px  #ff9801;
 }
 /* -------------------------------------- */
