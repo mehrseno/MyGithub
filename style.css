@@ -21,6 +21,17 @@ while the background image is loading */
 }
 
 
+.transparent-rectangle {
+  /* ++ */
+  background-color: #dcdce3;
+  /* ++ */
+  opacity: 0.9;
+  width: 30%;
+  height: 50%;
+  max-width: 800px;
+  /* == */
+  border-radius: 20px;
+}
 .transparent-search {
   width: 20%;
   height: 50%;
@@ -29,7 +40,7 @@ while the background image is loading */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(144, 144, 144);
+  background-color:#dcdce3;
   opacity: 0.8;
   gap: 1px;
 }
