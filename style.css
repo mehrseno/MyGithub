@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   background-image: url(../MyGithub/images/image-1.jpg);
   /* Background image is centered vertically and horizontally at all times */
@@ -19,28 +24,71 @@ while the background image is loading */
   gap: 50px;
   align-items: center;
 }
-
-
-.transparent-rectangle {
-  /* ++ */
-  background-color: #dcdce3;
-  /* ++ */
-  opacity: 0.9;
-  width: 30%;
-  height: 50%;
-  max-width: 800px;
-  /* == */
-  border-radius: 20px;
+p {
+  font-size: 16px;
+  word-break: break-all;
 }
+/* --------------------------------------------------------- */
+.transparent-elemenet {
+  background-color: black;
+  opacity: 0.9;
+  height: 50%;
+  border-style: solid;
+  border-color: #ff9801;
+  /* box-shadow: 10px 10px #ff9801; */
+}
+.transparent-rectangle {
+  display: flex;
+  /* background-color: #dcdce3; */
+  flex-direction: column;
+  width: 30%;
+  max-width: 800px;
+  /* border-radius: 20px; */
+}
+.transparent-rectangle__top {
+  margin: 10px 10px;
+  background-color: black;
+  /* background-color: #dcdce3; */
+  opacity: 0.9;
+  display: flex;
+  flex-direction: row;
+  height: 50%;
+}
+.transparent-rectangle__buttom {
+  margin: 10px 10px;
+  height: 50%;
+  color: #fff;
+  background-color: black;
+  /* background-color: #dcdce3; */
+  opacity: 0.9;
+}
+.transparent-rectangle img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border-style: solid;
+  border-color: #ff9801;
+}
+.transparent-rectangle__top-right {
+  align-self: center;
+  text-align: center;
+  padding-top: 50px;
+  padding: 20px 20px;
+  color: #fff;
+  font-size: 16px;
+  max-width: 100%;
+}
+
+/* ----------------------------------- */
 .transparent-search {
   width: 20%;
-  height: 50%;
-  border-radius: 20px;
+  /* border-radius: 20px ; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#dcdce3;
+  background-color: black;
+  /* background-color: #dcdce3; */
   opacity: 0.8;
   gap: 1px;
 }
@@ -48,6 +96,7 @@ while the background image is loading */
 .transparent-search h2 {
   padding-top: 50px;
   font-size: 30px;
+  color: #fff;
   border-bottom: black;
 }
 .transparent-search form {
@@ -73,7 +122,8 @@ while the background image is loading */
 
 .transparent-search form button {
   border-radius: 15px;
-  background-color: #243b55;
+  background-color: #ff9801;
+  /* background-color: #243b55; */
   padding: 10px 20px;
   color: #fff;
   font-size: 16px;
@@ -86,9 +136,4 @@ while the background image is loading */
   box-shadow: 0 0 5px #243b55, 0 0 25px #243b55, 0 0 50px #243b55,
     0 0 100px #243b55;
 }
-
-.transparent-rectangle img {
-  width: 40%;
-  height: 40%;
-  padding: 20px 20px;
-}
+/* -------------------------------------- */
