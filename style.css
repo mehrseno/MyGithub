@@ -41,7 +41,7 @@ p {
   flex-direction: column;
   width: 30%;
   max-width: 800px;
-  gap: 10px;
+  gap: 10%;
 }
 .transparent-rectangle__top {
   padding: 10px 10px;
@@ -73,8 +73,6 @@ p {
   padding-top: 50px;
   padding: 20px 20px;
   color: #fff;
-  font-size: 16px;
-  max-width: 100%;
 }
 
 /* ----------------------------------- */
@@ -106,7 +104,7 @@ p {
   max-width: 100%;
 }
 
-.transparent-search form input[type="text"] {
+.transparent-search__input {
   background-color: #fff;
   color: black;
   font-size: 16px;
@@ -116,7 +114,7 @@ p {
   width: 90%;
 }
 
-.transparent-search form button {
+.transparent-search__submit-button {
   border-radius: 15px;
   border-color: #ff9801;
   background-color: black;
@@ -126,7 +124,7 @@ p {
   letter-spacing: 3px;
 }
 
-.transparent-search button:hover {
+.transparent-search__submit-button:hover {
   background: #ff9801;
   color: #fff;
   box-shadow: 0 0 5px #ff9801, 0 0 10px #ff9801, 0 0 20px #ff9801,

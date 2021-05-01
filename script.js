@@ -35,38 +35,40 @@ async function getData(e) {
     setImage(dataImage)
 
 
-function setName(dataName) {
-    if (dataName == null) {
-        document.querySelector(".transparent-rectangle__name").innerHTML = "No Name!";
+    function setName(dataName) {
+        if (dataName == null)
+            document.querySelector(".transparent-rectangle__name").innerHTML = "No Name!";
 
+        else
+            document.querySelector(".transparent-rectangle__name").innerHTML = dataName;
     }
-    document.querySelector(".transparent-rectangle__name").innerHTML = dataName;
-}
-function setBlog(dataBlog) {
-    if (dataBlog == null) {
-        document.querySelector(".transparent-rectangle__blog").innerHTML = "No blog!";
+    function setBlog(dataBlog) {
+        if (dataBlog == null)
+            document.querySelector(".transparent-rectangle__blog").innerHTML = "No blog!";
+        else
+            document.querySelector(".transparent-rectangle__blog").innerHTML = dataBlog;
     }
-    document.querySelector(".transparent-rectangle__blog").innerHTML = dataBlog;
-}
 
-function setLocation(dataLocation) { 
-    if (dataLocation == null) {
-        document.querySelector(".transparent-rectangle__location").innerHTML = "No location!";
-    }
-    document.querySelector(".transparent-rectangle__location").innerHTML = dataLocation;
-}
+    function setLocation(dataLocation) {
+        if (dataLocation == null)
+            document.querySelector(".transparent-rectangle__location").innerHTML = "No location!";
 
-function setBio(dataBio) {
-      if (dataBio == null) {
-        document.querySelector(".transparent-rectangle__bio").innerHTML = "No bio!";
+        else
+            document.querySelector(".transparent-rectangle__location").innerHTML = dataLocation;
     }
-    document.querySelector(".transparent-rectangle__bio").innerHTML = dataBio;
- }
-function setImage(dataImage) {  
-    if (dataImage == null) {
-        document.querySelector(".transparent-rectangle__avatar_url").src = "../MyGithub/images/null-image.png";
+
+    function setBio(dataBio) {
+        if (dataBio == null)
+            document.querySelector(".transparent-rectangle__bio").innerHTML = "No bio!";
+        else
+            document.querySelector(".transparent-rectangle__bio").innerHTML = dataBio;
     }
-    document.querySelector(".transparent-rectangle__avatar_url").src = dataImage; }
+    function setImage(dataImage) {
+        if (dataImage == null)
+            document.querySelector(".transparent-rectangle__avatar_url").src = "../MyGithub/images/null-image.png";
+        else
+            document.querySelector(".transparent-rectangle__avatar_url").src = dataImage;
+    }
 
 
 }
