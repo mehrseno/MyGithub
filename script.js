@@ -1,6 +1,10 @@
 document.querySelector('.transparent-search__submit-button').addEventListener('click', fetchData);
 
-async function fetchData() {
+async function fetchData(e) {
+    if (username ==""){
+        console.log("there is no username");
+        return;}
+    e.preventDefault();
     let username = document.querySelector('.transparent-search__input').value;
     let str1 = "https://api.github.com/users/";
     let url = str1.concat(String(username));
@@ -20,4 +24,3 @@ async function getData() {
     return mydata
 }
 
-getData();
