@@ -28,13 +28,14 @@ p {
   font-size: 18px;
   word-break: break-all;
 }
+
 /* --------------------------------------------------------- */
 .transparent-elemenet {
   background-color: black;
   opacity: 0.8;
-  height: 50%;
   border-style: solid;
   border-color: #ff9801;
+  padding: 20px 20px;
 }
 .transparent-rectangle {
   display: flex;
@@ -44,21 +45,17 @@ p {
   gap: 10%;
 }
 .transparent-rectangle__top {
-  padding: 10px 10px;
   background-color: black;
   opacity: 0.9;
   display: flex;
   flex-direction: row;
-  height: 50%;
+  gap: 5%;
   width: 100%;
 }
-.transparent-rectangle__buttom {
+.transparent-rectangle__bottom {
   padding: 10px 10px;
-  height: 50%;
   width: 100%;
   color: #fff;
-  background-color: black;
-  opacity: 0.9;
 }
 .transparent-rectangle img {
   border-radius: 50%;
@@ -69,9 +66,6 @@ p {
 }
 .transparent-rectangle__top-right {
   align-self: center;
-  text-align: center;
-  padding-top: 50px;
-  padding: 20px 20px;
   color: #fff;
 }
 
@@ -84,11 +78,10 @@ p {
   align-items: center;
   background-color: black;
   opacity: 0.8;
-  gap: 1px;
+  gap: 30px;
 }
 
 .transparent-search h2 {
-  padding-top: 50px;
   font-size: 30px;
   color: #fff;
   border-bottom: black;
@@ -98,9 +91,8 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20%;
+  gap: 30px;
   width: 80%;
-  height: 80%;
   max-width: 100%;
 }
 
@@ -110,7 +102,6 @@ p {
   font-size: 16px;
   border: none;
   align-items: center;
-  height: 20%;
   width: 90%;
 }
 
@@ -119,9 +110,11 @@ p {
   border-color: #ff9801;
   background-color: black;
   padding: 10px 20px;
+  margin: 10px 20px;
   color: #fff;
   font-size: 16px;
   letter-spacing: 3px;
+  white-space: pre-line;
 }
 
 .transparent-search__submit-button:hover {
@@ -131,3 +124,29 @@ p {
     0 0 50px #ff9801;
 }
 /* -------------------------------------- */
+/* localStorage button */
+.clear__localStorage-button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-color: #ff9801;
+  background-color: black;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 3px;
+}
+/* --------------------------------- */
+/* print */
+.print__scroll-bar {
+  padding: 10px 10px;
+  position: absolute;
+  background-color: lightblue;
+  width: 100%;
+  height: 50px;
+  overflow: auto;
+  bottom: 0;
+  border-color: #ff9801;
+  background-color: black;
+  color: #fff;
+}

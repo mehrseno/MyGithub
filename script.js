@@ -4,7 +4,6 @@ async function fetchData(url) {
     try {
         let response = await fetch(url);
         let data = await response.json();
-        console.log("our data" +data);
         return data
     }
     catch (error) {
@@ -15,21 +14,21 @@ async function fetchData(url) {
 
 
 function setName(dataName) {
-    if (dataName == null)
+    if (dataName == null || dataName == "")
         document.querySelector(".transparent-rectangle__name").innerHTML = "No Name!";
 
     else
         document.querySelector(".transparent-rectangle__name").innerHTML = dataName;
 }
 function setBlog(dataBlog) {
-    if (dataBlog == null)
+    if (dataBlog == null || dataBlog == "")
         document.querySelector(".transparent-rectangle__blog").innerHTML = "No blog!";
     else
         document.querySelector(".transparent-rectangle__blog").innerHTML = dataBlog;
 }
 
 function setLocation(dataLocation) {
-    if (dataLocation == null)
+    if (dataLocation == null || dataLocation == "")
         document.querySelector(".transparent-rectangle__location").innerHTML = "No location!";
 
     else
@@ -37,20 +36,19 @@ function setLocation(dataLocation) {
 }
 
 function setBio(dataBio) {
-    if (dataBio == null)
+    if (dataBio == null || dataBio == "")
         document.querySelector(".transparent-rectangle__bio").innerHTML = "No bio!";
     else
         document.querySelector(".transparent-rectangle__bio").innerHTML = dataBio;
 }
 function setImage(dataImage) {
-
     document.querySelector(".transparent-rectangle__avatar_url").src = dataImage;
 }
 
 
 async function getData(e) {
     const username = document.querySelector('.transparent-search__input').value;
-    if (username == "") {
+    if (username == null) {
         console.log("there is no username");
         return;
     }
@@ -59,11 +57,14 @@ async function getData(e) {
     let url = str1.concat(String(username));
     let wholeData;
     if (username in localStorage) {
-        console.log("the username is in localStorage"+ localStorage);
-        wholeData = await JSON.parse(window.localStorage.getItem(username));
+        document.querySelector(".print__scroll-bar").innerHTML = "user name existed in Local Storage, to see our localStorage, visit console..."
+        console.log("hi again!, our localStorage:\n", localStorage);
+        wholeData = await JSON.parse(localStorage.getItem(username));
     }
     else {
+        document.querySelector(".print__scroll-bar").innerHTML = "User name didn't exist in Local Storage, to see our data , visit console..."
         wholeData = await fetchData(url);
+        console.log("hi again!, our data:\n", wholeData)
         localStorage.setItem(username, JSON.stringify(wholeData));
     }
     let dataName = wholeData.name;
@@ -80,4 +81,6 @@ async function getData(e) {
 }
 function clearLocalstorage(e) {
     localStorage.clear();
+    document.querySelector(".print__scroll-bar").innerHTML = "the local storage is empty now, to see our localStorage, visit console..."
+    console.log("hi again!,our localStorage:\n", localStorage);
 }
