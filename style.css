@@ -1,3 +1,10 @@
+/* we declare global variables.
+ Then, we use the var() function to insert the value of
+ the variables later in the style sheet*/
+:root {
+  --ourColor: #fca311;
+  /* --ourColor : red; */
+}
 * {
   margin: 0;
   padding: 0;
@@ -24,19 +31,38 @@ while the background image is loading */
   gap: 50px;
   align-items: center;
 }
+
 p {
   font-size: 18px;
   word-break: break-all;
 }
 
-/* --------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+/* 
+there are two elements:
+1-transparent-rectangle
+2-transparent-search 
+Some of the Styles of these two elements are incommon
+This style is for both of them*/
+
 .transparent-elemenet {
   background-color: black;
   opacity: 0.8;
   border-style: solid;
-  border-color: #ff9801;
+  border-color: var(--ourColor);
   padding: 20px 20px;
 }
+/* ------------------------------------------------------------------------- */
+/* transparent-rectangle and its children */
+/* --------------------------------------------------------------------------*/
+
+/* style for transparent-rectangle
+I used flex as display
+this rectangle has two children(div):
+1-transparent-rectangle__top 
+2-transparent-rectangle__bottom 
+that has 10% gap between them
+*/
 .transparent-rectangle {
   display: flex;
   flex-direction: column;
@@ -44,6 +70,16 @@ p {
   max-width: 800px;
   gap: 10%;
 }
+
+/*this style is for a div that is located at the top of the transparent-rectangle
+I used flex as display
+this div has two children:
+1-There is an img on the left 
+2-a div consisting of 3 paragraphs(user, blog, location)
+I used flex as display 
+Both are in a row next to each other and there is 10% gap between them
+ */
+
 .transparent-rectangle__top {
   background-color: black;
   opacity: 0.9;
@@ -52,26 +88,42 @@ p {
   gap: 5%;
   width: 100%;
 }
+
+ 
 .transparent-rectangle__bottom {
   padding: 10px 10px;
   width: 100%;
   color: #fff;
 }
+
+.transparent-rectangle__bio {
+  white-space: pre-line;
+}
+/* style for avatar */
 .transparent-rectangle img {
   border-radius: 50%;
   width: 150px;
   height: 150px;
   border-style: solid;
-  border-color: #ff9801;
+  border-color: var(--ourColor);
 }
+/* style for name, blog, location */
 .transparent-rectangle__top-right {
   align-self: center;
   color: #fff;
 }
 
-/* ----------------------------------- */
+/* ------------------------------------------------------------------------- */
+/* transparent-search and its children */
+/* -------------------------------------------------------------------- -----*/
+
+/* style for transparent-search
+I used flex as display
+it has two children(div):
+1-transparent-search__form 
+2-h2 for "username" header 
+that has 30% gap between them */
 .transparent-search {
-  width: 20%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,12 +132,19 @@ p {
   opacity: 0.8;
   gap: 30px;
 }
-
+/* style for "username" header */
 .transparent-search h2 {
   font-size: 30px;
   color: #fff;
   border-bottom: black;
 }
+/*
+I used flex as display for our form
+it has two children:
+1-an input that takes the username as input
+2-an input with submit type
+Both are in a column next to each other
+ */
 .transparent-search form {
   display: flex;
   flex-direction: column;
@@ -95,7 +154,8 @@ p {
   width: 80%;
   max-width: 100%;
 }
-
+/* style for input that takes the username as input
+the "color" is color of the text that is written inside */
 .transparent-search__input {
   background-color: #fff;
   color: black;
@@ -107,21 +167,20 @@ p {
 
 .transparent-search__submit-button {
   border-radius: 15px;
-  border-color: #ff9801;
+  border-color: var(--ourColor);
   background-color: black;
   padding: 10px 20px;
   margin: 10px 20px;
   color: #fff;
   font-size: 16px;
   letter-spacing: 3px;
-  white-space: pre-line;
 }
 
 .transparent-search__submit-button:hover {
-  background: #ff9801;
+  background: var(--ourColor);
   color: #fff;
-  box-shadow: 0 0 5px #ff9801, 0 0 10px #ff9801, 0 0 20px #ff9801,
-    0 0 50px #ff9801;
+  box-shadow: 0 0 5px var(--ourColor), 0 0 10px var(--ourColor),
+    0 0 20px var(--ourColor), 0 0 50px var(--ourColor);
 }
 /* -------------------------------------- */
 /* localStorage button */
@@ -129,24 +188,25 @@ p {
   position: absolute;
   left: 0;
   top: 0;
-  border-color: #ff9801;
+  border-left: none;
+  border-top: none;
+  border-bottom-color: var(--ourColor);
+  border-right-color: var(--ourColor);
   background-color: black;
   padding: 10px 20px;
   color: #fff;
-  font-size: 16px;
-  letter-spacing: 3px;
+  font-size: 18px;
 }
 /* --------------------------------- */
 /* print */
 .print__scroll-bar {
   padding: 10px 10px;
   position: absolute;
-  background-color: lightblue;
   width: 100%;
   height: 50px;
   overflow: auto;
   bottom: 0;
-  border-color: #ff9801;
   background-color: black;
   color: #fff;
+  font-size: 20px;
 }

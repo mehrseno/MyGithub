@@ -49,23 +49,28 @@ function setImage(dataImage) {
 async function getData(e) {
     const username = document.querySelector('.transparent-search__input').value;
     if (username == null) {
-        console.log("there is no username");
+        document.querySelector(".print__scroll-bar").innerHTML = "there is no username"
         return;
     }
     e.preventDefault();
     let str1 = "https://api.github.com/users/";
     let url = str1.concat(String(username));
     let wholeData;
-    if (username in localStorage) {
-        document.querySelector(".print__scroll-bar").innerHTML = "user name existed in Local Storage, to see our localStorage, visit console..."
-        console.log("hi again!, our localStorage:\n", localStorage);
-        wholeData = await JSON.parse(localStorage.getItem(username));
+    if (typeof (Storage) !== "undefined") {
+        if (username in localStorage) {
+            document.querySelector(".print__scroll-bar").innerHTML = "user name existed in Local Storage, to see our localStorage, visit console..."
+            console.log("hi again!, our localStorage:\n", localStorage);
+            wholeData = await JSON.parse(localStorage.getItem(username));
+        }
+        else {
+            document.querySelector(".print__scroll-bar").innerHTML = "User name didn't exist in Local Storage, to see our data , visit console..."
+            wholeData = await fetchData(url);
+            console.log("hi again!, our data:\n", wholeData)
+            localStorage.setItem(username, JSON.stringify(wholeData));
+        }
     }
     else {
-        document.querySelector(".print__scroll-bar").innerHTML = "User name didn't exist in Local Storage, to see our data , visit console..."
-        wholeData = await fetchData(url);
-        console.log("hi again!, our data:\n", wholeData)
-        localStorage.setItem(username, JSON.stringify(wholeData));
+        document.querySelector(".print__scroll-bar").innerHTML = "No web storage Support..."
     }
     let dataName = wholeData.name;
     let dataBlog = wholeData.blog;
