@@ -3,7 +3,6 @@
  the variables later in the style sheet*/
 :root {
   --ourColor: #fca311;
-  /* --ourColor : red; */
 }
 * {
   margin: 0;
@@ -35,6 +34,7 @@ while the background image is loading */
 p {
   font-size: 18px;
   word-break: break-all;
+  white-space: pre-line;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -66,8 +66,9 @@ that has 10% gap between them
 .transparent-rectangle {
   display: flex;
   flex-direction: column;
-  width: 30%;
-  max-width: 800px;
+  width: 500px;
+  /* width: 30%; */
+  /* max-width: 800px; */
   gap: 10%;
 }
 
@@ -89,16 +90,13 @@ Both are in a row next to each other and there is 10% gap between them
   width: 100%;
 }
 
- 
+/* */
 .transparent-rectangle__bottom {
   padding: 10px 10px;
   width: 100%;
   color: #fff;
 }
 
-.transparent-rectangle__bio {
-  white-space: pre-line;
-}
 /* style for avatar */
 .transparent-rectangle img {
   border-radius: 50%;
@@ -111,6 +109,7 @@ Both are in a row next to each other and there is 10% gap between them
 .transparent-rectangle__top-right {
   align-self: center;
   color: #fff;
+  /* width: 100px; */
 }
 
 /* ------------------------------------------------------------------------- */
@@ -131,6 +130,8 @@ that has 30% gap between them */
   background-color: black;
   opacity: 0.8;
   gap: 30px;
+  width: 200px;
+  max-width: 50%;
 }
 /* style for "username" header */
 .transparent-search h2 {
@@ -154,7 +155,7 @@ Both are in a column next to each other
   width: 80%;
   max-width: 100%;
 }
-/* style for input that takes the username as input
+/* style for <input> that takes the username as input
 the "color" is color of the text that is written inside */
 .transparent-search__input {
   background-color: #fff;
@@ -164,7 +165,9 @@ the "color" is color of the text that is written inside */
   align-items: center;
   width: 90%;
 }
+/* 
 
+*/
 .transparent-search__submit-button {
   border-radius: 15px;
   border-color: var(--ourColor);
