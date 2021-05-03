@@ -16,47 +16,48 @@ async function getWholeData(e) {
             document.querySelector(".print__scroll-bar").innerHTML = "user name existed in Local Storage, to see our localStorage, visit console..."
             console.log("hi again!, our localStorage:\n", localStorage);
             wholeData = await JSON.parse(localStorage.getItem(username));
+            setData(wholeData)
         }
         else {
             document.querySelector(".print__scroll-bar").innerHTML = "User name didn't exist in Local Storage, to see our data , visit console..."
             let response;
             try {
                 response = await fetch(url);
-                // if (response == null) {
                 if (response.status == 200) {
                     wholeData = await response.json();
                     console.log("hi again!, our data:\n", wholeData);
                     localStorage.setItem(username, JSON.stringify(wholeData));
+                    setData(wholeData)
                 }
                 else {
-                    console.log("an error accured");
-                    if (response.status == 404) {
-                        document.querySelector(".print__scroll-bar").innerHTML = "This username does not exist, response status :" + String(response.status)
-                    }
+                    let jsonResponse = await response.json();
+                    document.querySelector(".print__scroll-bar").innerHTML = "an error occured,   response message:" + String(jsonResponse.message) 
                 }
             }
             catch (error) {
                 document.querySelector(".print__scroll-bar").innerHTML = error
 
             }
-
         }
     }
     else {
         document.querySelector(".print__scroll-bar").innerHTML = "No web storage Support..."
     }
-    if (wholeData != null || wholeData != "undifined") {
-        let dataName = wholeData.name;
-        let dataBlog = wholeData.blog;
-        let dataLocation = wholeData.location;
-        let dataBio = wholeData.bio;
-        let dataImage = wholeData.avatar_url;
-        setName(dataName)
-        setBlog(dataBlog)
-        setLocation(dataLocation)
-        setBio(dataBio)
-        setImage(dataImage)
-    }
+
+}
+
+
+function setData(wholeData) {
+    let dataName = wholeData.name;
+    let dataBlog = wholeData.blog;
+    let dataLocation = wholeData.location;
+    let dataBio = wholeData.bio;
+    let dataImage = wholeData.avatar_url;
+    setName(dataName)
+    setBlog(dataBlog)
+    setLocation(dataLocation)
+    setBio(dataBio)
+    setImage(dataImage)
 }
 
 function setName(dataName) {
